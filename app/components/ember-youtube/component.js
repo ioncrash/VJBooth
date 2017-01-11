@@ -19,7 +19,7 @@ export default Ember.Component.extend({
 	lazyload: false,
 	showControls: true,
 	showDebug: false,
-	showProgress: false,
+	showProgress: true,
 	showExtras: computed.or('showControls', 'showProgress', 'showDebug'),
 
 	player: null,
