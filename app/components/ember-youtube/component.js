@@ -9,6 +9,7 @@ export default Ember.Component.extend({
 	ytid: null,
 	width: 560,
 	height: 315,
+  jogWheelActive: false,
 
 	// These options are used to load a video.
 	startSeconds: undefined,
@@ -340,20 +341,22 @@ export default Ember.Component.extend({
 			}
 		},
     jogWheel() {
-      if (this.get('player') && this.get('isPlaying')) {
+      if (this.get('player') && this.get('isPlaying') && this.get('jogWheelActive')) {
 				this.send('pause');
       }
     },
     jogWheelUp() {
-      if (this.get('player') && !this.get('isPlaying')) {
+      if (this.get('player') && !this.get('isPlaying') && this.get('jogWheelActive')) {
 				this.send('play');
       }
     },
 		togglePlay() {
 			if (this.get('player') && this.get('isPlaying')) {
 				this.send('pause');
+        this.set('jogWheelActive', false)
 			} else {
 				this.send('play');
+        this.set('jogWheelActive', true)
 			}
 		},
 		mute() {

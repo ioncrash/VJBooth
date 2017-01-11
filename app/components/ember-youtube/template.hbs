@@ -4,7 +4,7 @@
 	<div class="EmberYoutube-extras">
 		{{#if showControls}}
 			<menu class="EmberYoutube-controls">
-				<button {{action 'togglePlay'}}>{{#if isPlaying}}Pause{{else}}Play{{/if}}</button>
+				<button {{action 'togglePlay'}}>{{#if jogWheelActive}}Pause{{else}}Play{{/if}}</button>
 				<button {{action 'toggleVolume'}}>{{#if isMuted}}Unmute{{else}}Mute{{/if}}</button>
         <button {{action 'jogWheel' on='mouseDown'}}{{action 'jogWheelUp' on='mouseUp'}}>jogWheel</button>
 			</menu>
