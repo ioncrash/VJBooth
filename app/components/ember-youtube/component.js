@@ -16,7 +16,7 @@ export default Ember.Component.extend({
 	suggestedQuality: undefined,
 
 	lazyload: false,
-	showControls: false,
+	showControls: true,
 	showDebug: false,
 	showProgress: false,
 	showExtras: computed.or('showControls', 'showProgress', 'showDebug'),
@@ -321,7 +321,7 @@ export default Ember.Component.extend({
 		// clear the timer
 		this.stopTimer();
 		// destroy video player
-		var player = this.get('player');
+		const player = this.get('player');
 		if (player) {
 			player.destroy();
 			this.set('player', null);
@@ -339,6 +339,16 @@ export default Ember.Component.extend({
 				this.get('player').pauseVideo();
 			}
 		},
+    jogWheel() {
+      if (this.get('player') && this.get('isPlaying')) {
+				this.send('pause');
+      }
+    },
+    jogWheelUp() {
+      if (this.get('player') && !this.get('isPlaying')) {
+				this.send('play');
+      }
+    },
 		togglePlay() {
 			if (this.get('player') && this.get('isPlaying')) {
 				this.send('pause');
