@@ -353,10 +353,10 @@ export default Ember.Component.extend({
 		togglePlay() {
 			if (this.get('player') && this.get('isPlaying')) {
 				this.send('pause');
-        this.set('jogWheelActive', false)
+        this.set('jogWheelActive', false);
 			} else {
 				this.send('play');
-        this.set('jogWheelActive', true)
+        this.set('jogWheelActive', true);
 			}
 		},
 		mute() {

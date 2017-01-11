@@ -7,6 +7,10 @@
 				<button {{action 'togglePlay'}}>{{#if jogWheelActive}}Pause{{else}}Play{{/if}}</button>
 				<button {{action 'toggleVolume'}}>{{#if isMuted}}Unmute{{else}}Mute{{/if}}</button>
         <button {{action 'jogWheel' on='mouseDown'}}{{action 'jogWheelUp' on='mouseUp'}}>jogWheel</button>
+        <form {{action 'loadVideo' on='submit'}}>
+          {{input placeholder='Youtube ID' value=ytid}}
+          <button class='btn btn-success' type='submit'>Load Video</button>
+        </form>
 			</menu>
 		{{/if}}
 
