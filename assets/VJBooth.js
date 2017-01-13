@@ -33,6 +33,12 @@ define('VJBooth/application/serializer', ['exports', 'active-model-adapter'], fu
 define("VJBooth/application/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "sfunAF0j", "block": "{\"statements\":[[\"open-element\",\"h1\",[]],[\"flush-element\"],[\"text\",\" Welcome to Ember! \"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "VJBooth/application/template.hbs" } });
 });
+define('VJBooth/components/oscillator-cont/component', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Component.extend({});
+});
+define("VJBooth/components/oscillator-cont/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "NanZDRPN", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "VJBooth/components/oscillator-cont/template.hbs" } });
+});
 define('VJBooth/controllers/array', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller;
 });
@@ -308,7 +314,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("VJBooth/app")["default"].create({"name":"VJBooth","version":"0.0.1+e5b7e99d"});
+  require("VJBooth/app")["default"].create({"name":"VJBooth","version":"0.0.1+1081f220"});
 }
 
 /* jshint ignore:end */

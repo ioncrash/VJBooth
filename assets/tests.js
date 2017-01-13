@@ -27,6 +27,15 @@ define('VJBooth/tests/application/serializer.jshint.lint-test', ['exports'], fun
     assert.ok(true, 'application/serializer.js should pass jshint.');
   });
 });
+define('VJBooth/tests/components/oscillator-cont/component.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | components/oscillator-cont/component.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/oscillator-cont/component.js should pass jshint.');
+  });
+});
 define('VJBooth/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = destroyApp;
 
@@ -129,6 +138,44 @@ define('VJBooth/tests/index/route.jshint.lint-test', ['exports'], function (expo
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'index/route.js should pass jshint.');
+  });
+});
+define('VJBooth/tests/integration/components/oscillator-cont/component-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('oscillator-cont', 'Integration | Component | oscillator cont', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      'id': 'Q/IbOieJ',
+      'block': '{"statements":[["append",["unknown",["oscillator-cont"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      'id': 'aVIWAjYl',
+      'block': '{"statements":[["text","\\n"],["block",["oscillator-cont"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('VJBooth/tests/integration/components/oscillator-cont/component-test.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | integration/components/oscillator-cont/component-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/oscillator-cont/component-test.js should pass jshint.');
   });
 });
 define('VJBooth/tests/resolver.jshint.lint-test', ['exports'], function (exports) {
